@@ -25,7 +25,7 @@ Template.create([
     file_name: 'one_does_simply_not.jpg'
   },
   {
-    name: 'Scume Bag Girl',
+    name: 'Scum Bag Girl',
     file_name: 'scum_bag_girl.jpg'
   }
   ])

@@ -1,0 +1,93 @@
+<input id="inputForm" type="text">
+<div id="newMeme"></div>
+
+
+
+<script>
+$(function () {
+  var imageObj = new Image();
+  imageObj.src = 'images/templates/<%= meme.escape('file_name') %>';
+  imageObj.onload = function () {
+    console.log(imageObj.width)
+    initialize(imageObj.width, imageObj.height)
+    run();
+  };
+
+  function initialize(width, height) {
+    $('#newMeme').html('\
+      <canvas id="myCanvas" \
+      width="' + width + '" \
+      height="' + height + '" \
+      ></canvas>')
+  };
+
+  function run() {
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    context.font = "40px Helvetica";
+    context.fillStyle = 'white';
+    context.strokeStyle = 'black';
+    context.miterLimit = 2;
+    context.lineJoin = 'circle';
+    context.textAlign = "center";
+    context.drawImage(imageObj, 0, 0);
+
+    function clear() {
+    context.save();
+    context.clearRect(0, 0, imageObj.width, imageObj.height);
+    context.drawImage(imageObj, 0, 0);
+  };
+
+  function fragmentText(text, maxWidth) {
+    var words = text.split(' ');
+    var lines = [];
+    var line = "";
+
+    if (context.measureText(text).width < maxWidth) {
+      return [text];
+    }
+
+    while (words.length > 0) {
+      while (context.measureText(words[0]).width >= maxWidth) {
+        var tmp = words[0];
+        words[0] = tmp.slice(0, -1);
+        if (words.length > 1) {
+          words[1] = tmp.slice(-1) + words[1];
+        } else {
+          words.push(tmp.slice(-1));
+        }
+      }
+
+      if (context.measureText(line + words[0]).width < maxWidth) {
+        line += words.shift() + " ";
+      } else {
+        lines.push(line);
+        line = "";
+      }
+      if (words.length === 0) {
+        lines.push(line);
+      }
+    }
+    return lines;
+  };
+
+  function drawText(text) {
+    clear();
+    var width = imageObj.width
+    var lines = fragmentText(text, (width*.9));
+
+    lines.forEach(function(line,i) {
+      context.lineWidth = 7;
+      context.strokeText(line, width/2, 55 + (i*40))
+      context.lineWidth = 1;
+      context.fillText(line, width/2, 55 + (i*40))
+    })
+  };
+
+  $('#inputForm').keyup( function(event) {
+    drawText($(event.currentTarget).val());
+  });
+
+  }
+});
+</script>

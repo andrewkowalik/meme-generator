@@ -6,3 +6,4 @@
   * paperclip gem
 
 ## TODO
+  * Optimize text algo to reduce font size + positioning

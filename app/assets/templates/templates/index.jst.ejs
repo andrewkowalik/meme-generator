@@ -1,7 +1,11 @@
 <ul>
 <%templates.each(function(template) {%>
     <li>
-      <img src="images/templates/<%= template.escape('file_name') %>">
+      <a
+        id="meme"
+        href="#new_meme/<%= template.id %>"
+        data-id="<%= template.id %>"
+      ><%= template.escape('name') %></a>
     </li>
 <%});%>
 </ul>
