@@ -53,7 +53,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.3.6)
     debug_inspector (0.0.2)
+    debugger (1.6.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.1)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -142,6 +149,7 @@ DEPENDENCIES
   backbone-on-rails
   better_errors
   binding_of_caller
+  debugger
   figaro
   jquery-rails
   paperclip

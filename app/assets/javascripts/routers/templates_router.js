@@ -6,6 +6,7 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
   routes: {
     '': 'index',
     'new_meme/:id': 'newMeme',
+    'show/:id': 'showMeme',
   },
 
   index: function() {
@@ -20,17 +21,24 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
 
   newMeme: function(id) {
     var that = this;
-
     var meme = MemeGenerator.Models.Template.findOrCreate({id: id});
-
     var newMemeView = new MemeGenerator.Views.NewMeme({
       model: meme
     });
 
     meme.fetch();
-
     that.$rootEl.html(newMemeView.render().$el);
-
   },
+
+  showMeme: function(id) {
+    var that = this;
+    var userMeme = MemeGenerator.Models.Meme.findOrCreate({id: id});
+    var showMeme = new MemeGenerator.Views.ShowMeme({
+      model: userMeme
+    });
+
+    userMeme.fetch({});
+    that.$rootEl.html(showMeme.render().$el)
+  }
 
 });

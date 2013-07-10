@@ -24,6 +24,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'sqlite3'
   gem 'backbone-on-rails'
+  gem 'debugger'
 end
 
 group :production do

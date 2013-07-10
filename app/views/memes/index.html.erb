@@ -1,0 +1,7 @@
+<%= form_for(@meme) do |f| %>
+<div class="field">
+  <%= f.label :meme %>
+  <%= f.file_field :meme %>
+  <%= f.submit 'Submit' %>
+</div>
+<% end %>
