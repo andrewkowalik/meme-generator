@@ -1,4 +1,5 @@
-# meme_generator
+meme_generator
+==============
 
 # Technology Stack
   * rails
