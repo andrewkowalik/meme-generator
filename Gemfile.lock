@@ -150,6 +150,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   debugger
+  ejs
   figaro
   jquery-rails
   paperclip

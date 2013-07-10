@@ -34,6 +34,7 @@ end
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'ejs'
 
 
 # To use ActiveModel has_secure_password
