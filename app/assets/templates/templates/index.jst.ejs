@@ -1,0 +1,7 @@
+<ul>
+<%templates.each(function(template) {%>
+    <li>
+      <img src="images/templates/<%= template.escape('file_name') %>">
+    </li>
+<%});%>
+</ul>

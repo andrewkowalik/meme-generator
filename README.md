@@ -1,9 +1,8 @@
-meme_generator
-==============
+# meme_generator
 
-# Technology Stack
+## Technology Stack
   * rails
   * backbone
   * paperclip gem
 
-# TODO
+## TODO

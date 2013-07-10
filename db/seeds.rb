@@ -5,3 +5,27 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+templates =
+Template.create([
+  {
+    name: 'Annoyed Picard',
+    file_name: 'annoyed_picard.jpg'
+  },
+  {
+    name: 'Confession Bear',
+    file_name: 'confession_bear.jpg'
+  },
+  {
+    name: 'Good Guy Greg',
+    file_name: 'good_guy_greg.jpg'
+  },
+  {
+    name: 'One Does Simply Not',
+    file_name: 'one_does_simply_not.jpg'
+  },
+  {
+    name: 'Scume Bag Girl',
+    file_name: 'scum_bag_girl.jpg'
+  }
+  ])
