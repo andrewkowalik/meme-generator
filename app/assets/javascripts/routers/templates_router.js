@@ -33,11 +33,15 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
   showMeme: function(id) {
     var that = this;
     var userMeme = MemeGenerator.Models.Meme.findOrCreate({id: id});
+
     var showMeme = new MemeGenerator.Views.ShowMeme({
       model: userMeme
     });
 
-    userMeme.fetch({});
+    if (!userMeme.file_name){
+      userMeme.fetch({});
+    }
+
     that.$rootEl.html(showMeme.render().$el)
   }
 

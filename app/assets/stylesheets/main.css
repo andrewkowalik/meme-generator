@@ -1,0 +1,60 @@
+body {
+
+}
+
+#box {
+  width: 900px;
+  margin: 0 auto;
+  /*background-color: #808080;*/
+
+}
+
+h1 {
+  font-family: 'Kite One', sans-serif;
+  font-size: 2em;
+  font-weight: normal
+}
+
+h2 {
+  font-family: 'Kite One', sans-serif;
+  font-size: 1.75em;
+  font-weight: normal
+}
+
+#title-box {
+  width: 100%;
+  /*font-family: 'Kite One', sans-serif;
+  font-size: 2em;*/
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+#new-meme-box {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+#memes ul {
+  margin-left: 0;
+  margin-right: 0;
+  display: inline;
+  list-style: none;
+}
+#memes li {
+  margin-left: 0;
+  padding: 3px 5px;
+  display: inline;
+  list-style: none;
+}
+
+#memeInput div {
+  float: left;
+  width: 80%;
+}
+
+#memePicture div {
+  float: left;
+}

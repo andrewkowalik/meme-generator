@@ -27,5 +27,9 @@ Template.create([
   {
     name: 'Scum Bag Girl',
     file_name: 'scum_bag_girl.jpg'
+  },
+  {
+    name: 'Sonny Time',
+    file_name: 'sonny_time.jpg'
   }
   ])

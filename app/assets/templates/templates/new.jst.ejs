@@ -1,6 +1,13 @@
-<input id="inputForm" type="text">
+<div id="new-meme-box">
+<input id="inputFormTop" type="text" placeholder="Top Text...">
+<input id="inputFormBot" type="text" placeholder="Bottom Text...">
+<br>
 <button type="button" id="saveMeme">Save!</button>
+
+
 <div id="newMeme"></div>
+<h2><%= meme.escape('name') %></h2>
+</div>
 
 
 
@@ -10,8 +17,7 @@ $(function () {
   var imageObj = new Image();
   imageObj.src = 'images/templates/<%= meme.escape('file_name') %>';
   imageObj.onload = function () {
-    console.log(imageObj.width)
-    initialize(imageObj.width, imageObj.height)
+    initialize(imageObj.width, imageObj.height);
     run();
   };
 
@@ -41,6 +47,7 @@ $(function () {
   };
 
   function fragmentText(text, maxWidth) {
+    text = text.toUpperCase();
     var words = text.split(' ');
     var lines = [];
     var line = "";
@@ -73,21 +80,36 @@ $(function () {
     return lines;
   };
 
-  function drawText(text) {
+  function drawTextTop() {
     clear();
-    var width = imageObj.width
-    var lines = fragmentText(text, (width*.9));
+    var textTop = $('#inputFormTop').val();
+    var textBot = $('#inputFormBot').val();
+    var width = imageObj.width;
+    var height = imageObj.height;
+    var linesTop = fragmentText(textTop, (width*.95));
+    var linesBot = fragmentText(textBot, (width*.95));
 
-    lines.forEach(function(line,i) {
+    linesTop.forEach(function(line,i) {
       context.lineWidth = 7;
       context.strokeText(line, width/2, 55 + (i*40))
       context.lineWidth = 1;
       context.fillText(line, width/2, 55 + (i*40))
-    })
+    });
+
+    linesBot.forEach(function(line,i) {
+      context.lineWidth = 7;
+      context.strokeText(line, width/2, height - (55 - (i*40)));
+      context.lineWidth = 1;
+      context.fillText(line, width/2, height - (55 - (i*40)));
+    });
   };
 
-  $('#inputForm').keyup( function(event) {
-    drawText($(event.currentTarget).val());
+  $('#inputFormTop').keyup( function(event) {
+    drawTextTop();
+  });
+
+  $('#inputFormBot').keyup( function(event) {
+    drawTextTop();
   });
 
   }

@@ -33,7 +33,6 @@ MemeGenerator.Views.NewMeme = Backbone.View.extend({
     });
     newImage.save({}, {
       success: function(model) {
-        console.log('win')
         window.location.hash = ('show/' + model.id);
       }
     });

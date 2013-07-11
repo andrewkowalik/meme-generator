@@ -26,7 +26,7 @@ MemeGenerator.Views.TemplatesIndex = Backbone.View.extend({
     var that = this;
     event.preventDefault();
 
-    console.log($(event.target).attr('data-id'));
+    // console.log($(event.target).attr('data-id'));
   },
 
 });
