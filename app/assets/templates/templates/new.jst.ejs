@@ -57,7 +57,7 @@ $(function () {
     function clear() {
     context.save();
     context.clearRect(0, 0, imageObj.width, imageObj.height);
-    context.drawImage(imageObj, 0, 0);
+    context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height );
   };
 
   function fragmentText(text, maxWidth) {
