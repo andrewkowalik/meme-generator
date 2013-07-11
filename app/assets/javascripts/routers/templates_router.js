@@ -22,11 +22,14 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
   newMeme: function(id) {
     var that = this;
     var meme = MemeGenerator.Models.Template.findOrCreate({id: id});
+
     var newMemeView = new MemeGenerator.Views.NewMeme({
       model: meme
     });
 
-    meme.fetch();
+    if (!meme.file_name){
+      meme.fetch();
+    }
     that.$rootEl.html(newMemeView.render().$el);
   },
 
@@ -35,11 +38,12 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
     var userMeme = MemeGenerator.Models.Meme.findOrCreate({id: id});
 
     var showMeme = new MemeGenerator.Views.ShowMeme({
-      model: userMeme
+      model: userMeme,
+      el: $('.showMeme:last')
     });
 
     if (!userMeme.file_name){
-      userMeme.fetch({});
+      userMeme.fetch();
     }
 
     that.$rootEl.html(showMeme.render().$el)

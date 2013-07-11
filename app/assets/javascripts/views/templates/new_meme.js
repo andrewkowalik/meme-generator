@@ -8,9 +8,9 @@ MemeGenerator.Views.NewMeme = Backbone.View.extend({
   initialize: function() {
     var that = this;
 
-    var events = ['add', 'change', 'remove', 'reset'];
+    var events = ['change'];
     _(events).each(function(event) {
-      that.listenTo(that.model, event, that.render);
+      that.listenToOnce(that.model, event, that.render);
     });
   },
 
