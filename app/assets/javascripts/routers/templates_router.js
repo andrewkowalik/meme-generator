@@ -15,7 +15,11 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
     var indexView = new MemeGenerator.Views.TemplatesIndex({
       collection: MemeGenerator.templates
     });
+
+    if (MemeGenerator.templates.length === 0){
     MemeGenerator.templates.fetch();
+    }
+
     that.$rootEl.html(indexView.render().$el);
   },
 
