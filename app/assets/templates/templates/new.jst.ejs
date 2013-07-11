@@ -25,9 +25,9 @@ $(function () {
       imageObj.width = 450;
       imageObj.height = height * change;
     }
-    if (height > 450) {
-      change = 450 / height;
-      imageObj.height = 450;
+    if (height > 415) {
+      change = 415 / height;
+      imageObj.height = 415;
       imageObj.width = width * change;
     }
 
@@ -106,16 +106,17 @@ $(function () {
 
     linesTop.forEach(function(line,i) {
       context.lineWidth = 7;
-      context.strokeText(line, width/2, 55 + (i*40))
+      context.strokeText(line, width/2, 35 + (i*30))
       context.lineWidth = 1;
-      context.fillText(line, width/2, 55 + (i*40))
+      context.fillText(line, width/2, 35 + (i*30))
     });
 
+    botLength = linesBot.length
     linesBot.forEach(function(line,i) {
       context.lineWidth = 7;
-      context.strokeText(line, width/2, height - (55 - (i*40)));
+      context.strokeText(line, width/2, height - (30 * (botLength -i)));
       context.lineWidth = 1;
-      context.fillText(line, width/2, height - (55 - (i*40)));
+      context.fillText(line, width/2, height - (30 * (botLength -i)));
     });
   };
 
