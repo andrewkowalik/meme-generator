@@ -6,7 +6,7 @@
 
 
 <div id="newMeme"></div>
-<h2><%= meme.escape('name') %></h2>
+  <h2><%= meme.escape('name') %></h2>
 </div>
 
 
@@ -17,6 +17,19 @@ $(function () {
   var imageObj = new Image();
   imageObj.src = 'images/templates/<%= meme.escape('file_name') %>';
   imageObj.onload = function () {
+    var width = imageObj.width;
+    var height = imageObj.height;
+
+    if (width > 450) {
+      change = 450 / width;
+      imageObj.width = 450;
+      imageObj.height = height * change;
+    } else if (height > 450) {
+      change = 450 / height;
+      imageObj.height = 450;
+      imageObj.width = width * change;
+    }
+
     initialize(imageObj.width, imageObj.height);
     run();
   };
@@ -39,7 +52,7 @@ $(function () {
     context.miterLimit = 2;
     context.lineJoin = 'circle';
     context.textAlign = "center";
-    context.drawImage(imageObj, 0, 0);
+    context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height );
 
     function clear() {
     context.save();
