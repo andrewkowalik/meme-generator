@@ -2,10 +2,6 @@
 <%templates.each(function(template) {%>
     <li id="memes">
       <div class="popover">
-          <ul>
-        <li><a href="#new_meme/<%= template.id %>">New</a></li>
-        <li><a href="index.html">View</a></li>
-      </ul>
       <a id="meme" href="#new_meme/<%= template.id %>"
         data-id="<%= template.id %>">
           <img src="images/templates/thumbs/<%= template.escape('file_name') %>">

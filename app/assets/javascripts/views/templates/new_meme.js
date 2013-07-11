@@ -23,6 +23,7 @@ MemeGenerator.Views.NewMeme = Backbone.View.extend({
   },
 
   newMeme: function() {
+    var spinner = Spinner.getSpinner('50px', 22, '#'+'ff4444');
     var canvas = document.getElementById('myCanvas');
     var dataURL = canvas.toDataURL('image/jpeg');
 
@@ -31,6 +32,8 @@ MemeGenerator.Views.NewMeme = Backbone.View.extend({
     newImage.set({
       temp: dataURL
     });
+
+    $('#new-meme-box').html(spinner);
     newImage.save({}, {
       success: function(model) {
         window.location.hash = ('show/' + model.id);

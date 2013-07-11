@@ -68,6 +68,10 @@ h2 {
   position: relative;
   zoom: 1;
   *display: inline;
+  opacity: .5;
+}
+.popover:hover {
+  opacity: 1;
 }
 .popover:hover ul {
   visibility: visible;
