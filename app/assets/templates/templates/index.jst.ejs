@@ -1,9 +1,7 @@
 <ul id="memes">
 <%templates.each(function(template) {%>
     <li id="memes">
-      <a
-        id="meme"
-        href="#new_meme/<%= template.id %>"
+      <a id="meme" href="#new_meme/<%= template.id %>"
         data-id="<%= template.id %>">
           <img src="images/templates/thumbs/<%= template.escape('file_name') %>">
         </a>
