@@ -27,7 +27,7 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
       model: meme
     });
 
-    if (!meme.file_name){
+    if (!meme.escape('file_name')){
       meme.fetch();
     }
     that.$rootEl.html(newMemeView.render().$el);
@@ -38,8 +38,7 @@ MemeGenerator.Routers.Templates = Backbone.Router.extend({
     var userMeme = MemeGenerator.Models.Meme.findOrCreate({id: id});
 
     var showMeme = new MemeGenerator.Views.ShowMeme({
-      model: userMeme,
-      el: $('.showMeme:last')
+      model: userMeme
     });
 
     if (!userMeme.file_name){
