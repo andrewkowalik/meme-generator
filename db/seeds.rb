@@ -9,11 +9,23 @@
 templates =
 Template.create([
   {
+    name: 'Tien!',
+    file_name: 'tein.jpg'
+  },
+  {
+    name: 'Me Gusta',
+    file_name: 'me_gusta.jpg'
+  },
+  {
+    name: '软',
+    file_name: 'suave_asian.jpg'
+  },
+  {
     name: 'Sonny Time',
     file_name: 'sonny_time.jpg'
   },
   {
-    name: 'Words of Wisdom',
+    name: 'Nied',
     file_name: 'words_of_wisdom.jpg'
   },
   {
@@ -67,5 +79,15 @@ Template.create([
   {
     name: 'Business Cat',
     file_name: 'business_cat.jpg'
+  },
+  {
+    name: 'Grumpy Cat',
+    file_name: 'grumpy_cat.jpg'
+  },
+  {
+    name: 'Ancient Aliens',
+    file_name: 'ancient_aliens.jpg'
   }
+
+
   ])
