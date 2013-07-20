@@ -9,30 +9,6 @@
 templates =
 Template.create([
   {
-    name: 'Tien!',
-    file_name: 'tein.jpg'
-  },
-  {
-    name: 'Me Gusta',
-    file_name: 'me_gusta.jpg'
-  },
-  {
-    name: '软',
-    file_name: 'suave_asian.jpg'
-  },
-  {
-    name: 'Sonny Time',
-    file_name: 'sonny_time.jpg'
-  },
-  {
-    name: 'Nied',
-    file_name: 'words_of_wisdom.jpg'
-  },
-  {
-    name: 'Ya-Ya-Ya-Ya-Ya-Ya....',
-    file_name: 'ya_ya_ya_ya.jpg'
-  },
-  {
     name: 'Annoyed Picard',
     file_name: 'annoyed_picard.jpg'
   },
@@ -49,10 +25,6 @@ Template.create([
     file_name: 'one_does_simply_not.jpg'
   },
   {
-    name: 'Scum Bag Girl',
-    file_name: 'scum_bag_girl.jpg'
-  },
-  {
     name: 'Bad Joke Eel',
     file_name: 'bad_joke_eel.jpg'
   },
@@ -63,10 +35,6 @@ Template.create([
   {
     name: 'Futurama Fry',
     file_name: 'futurama_fry.jpg'
-  },
-  {
-    name: 'B*tch Please',
-    file_name: 'bitch_please.jpg'
   },
   {
     name: 'Socially Awkward Penguin',
@@ -87,6 +55,38 @@ Template.create([
   {
     name: 'Ancient Aliens',
     file_name: 'ancient_aliens.jpg'
+  },
+  {
+    name: 'Angry Walter',
+    file_name: 'angry_walter.jpg'
+  },
+  {
+    name: "Redditor's Wife",
+    file_name: 'redditors_wife.jpg'
+  },
+  {
+    name: 'Downvoting Roman',
+    file_name: 'downvoting_roman.jpg'
+  },
+  {
+    name: 'Success Kid',
+    file_name: 'success_kid.jpg'
+  },
+  {
+    name: 'Lazy College Senior',
+    file_name: 'lazy_college_senior.jpg'
+  },
+  {
+    name: 'Insanity Wolf',
+    file_name: 'insanity_wolf.jpg'
+  },
+  {
+    name: 'Actual Advice Mallard.jpg',
+    file_name: 'actual_advice_mallard.jpg'
+  },
+  {
+    name: 'First World Problems',
+    file_name: 'first_world_problems.jpg'
   }
 
 
